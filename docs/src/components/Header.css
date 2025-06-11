@@ -1,0 +1,155 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: #0a0a0a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    z-index: 1000;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+  
+  .header__logo {
+    width: 160px;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Центрирует по вертикали */
+    justify-content: flex-start;
+    margin-left: 25px;
+  }
+  
+  .cropped-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .header__center-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .header__nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 17.3px;
+    line-height: 27px;
+    letter-spacing: -1.08px;
+    transition: opacity 0.2s;
+  }
+  
+  .header__nav a:hover {
+    opacity: 0.7;
+  }
+  
+  .header__email {
+    border: 1px solid #fff;
+    border-radius: 22px;
+    padding: 8px 16px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+  
+  .header__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 1100;
+    margin-left: auto;
+  }
+  
+  .header__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: #0a0a0a;
+    z-index: 1200;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
+
+    /* добавляем анимацию */
+    transform: translateX(-100%);
+    animation: slideInSidebar 0.35s ease-out forwards;
+  }
+  
+  @keyframes slideInSidebar {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .header__sidebar-logo {
+    height: 48px;
+    width: 160px;
+    margin-left: 25px;
+    overflow: hidden;
+  }
+  
+  .header__sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 17.3px;
+    line-height: 27px;
+    letter-spacing: -1.08px;
+    padding: 12px 28px 12px 25px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .header__sidebar a:last-child {
+    border-bottom: none;
+  }
+  
+  .header__sidebar a:hover {
+    background: #222;
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      padding: 0 12px;
+    }
+  
+    .header__center-wrapper {
+      display: none;
+    }
+  
+    .header__email {
+      display: none;
+    }
+  
+    .header__hamburger {
+      display: block;
+    }
+  }
+  
